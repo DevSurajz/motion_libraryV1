@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ShineButton, Spotlight } from "./chrome";
+import { Button } from "./ui/button";
 
 export function CtaPanel() {
   return (
@@ -12,7 +13,7 @@ export function CtaPanel() {
             <p>The fastest growing library of cinematic prompts for AI design workflows.</p>
             <div className="ctp-b">
               <ShineButton href="/pricing">See plans</ShineButton>
-              <Link href="/library" className="ctp-o">Explore Library</Link>
+              <Button asChild variant="metal"><Link href="/library">Explore Library</Link></Button>
             </div>
           </div>
         </Spotlight>

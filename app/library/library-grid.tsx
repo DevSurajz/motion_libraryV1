@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { CATEGORIES, LIBRARY } from "@/lib/data";
 import { Card } from "@/components/visuals";
+import { Button } from "@/components/ui/button";
 
 export function LibraryGrid() {
   const [f, setF] = useState("All");
@@ -13,7 +14,7 @@ export function LibraryGrid() {
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search prompts…" aria-label="Search prompts" />
         <div className="chips">
           {["All", ...CATEGORIES.map((c) => c[1])].map((t) => (
-            <button key={t} className={`chip ${f == t ? "on" : ""}`} onClick={() => setF(t)}>{t}</button>
+            <Button key={t} variant="chip" size="chip" aria-pressed={f == t} onClick={() => setF(t)}>{t}</Button>
           ))}
         </div>
       </div>

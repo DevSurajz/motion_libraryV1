@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useUi } from "./providers";
+import { Button } from "./ui/button";
 
 export function Intro() {
   return (
@@ -28,7 +29,7 @@ export function Nav() {
     <>
       <div className={"nblur" + (sc ? " on" : "")} aria-hidden />
       <nav className={sc ? "sc" : ""}>
-        <Link className="lg" href="/">lumen</Link>
+        <Link className="lg" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden><path d="M12 3 3 8l9 5 9-5-9-5Z" fill="currentColor" /><path d="m3 12.5 9 5 9-5" /><path d="m3 16.5 9 5 9-5" /></svg>lumen</Link>
         <div className="nc">
           <button className="sb glass" onClick={openPalette} aria-label="Search the library">⌕ <span>⌘K</span></button>
           <div className="ls glass">
@@ -42,7 +43,7 @@ export function Nav() {
           </div>
         </div>
         <button className="sb glass msb" onClick={openPalette} aria-label="Search designs">⌕ <span>Search designs</span></button>
-        <Link className="btn glass dsi" href="/signin">Sign in</Link>
+        <Button asChild variant="metal" size="sm"><Link href="/signin">Sign in</Link></Button>
         <button id="bg" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>{open ? "✕" : "☰"}</button>
       </nav>
       <div id="mm" className={open ? "o" : ""} onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
@@ -70,7 +71,11 @@ export function AskButton() {
   return <button className="ask glass" onClick={openPalette}><i>✦</i>Ask AI for guides</button>;
 }
 
-const SOC = [["◎", "Instagram"], ["𝕏", "Lumen on X"], ["▶", "YouTube"], ["in", "LinkedIn"]];
+const SOC = [["◎", "Instagram"], ["f", "Facebook"], ["P", "Pinterest"], ["𝕏", "Lumen on X"], ["in", "LinkedIn"]];
+const PRODUCT = [["/library", "Templates"], ["/library", "3D Scenes"], ["/library", "Sections"], ["/library", "Backgrounds"], ["/library", "Gradients"], ["/#tools", "Tools"], ["/docs", "Docs"], ["/docs", "MCP"], ["/pricing", "Pricing"]];
+const COMPANY = [["/legal/about", "About"], ["/legal/affiliate", "Affiliate"], ["/contact", "Contact us"], ["/legal/privacy", "Privacy Policy"], ["/legal/terms", "Terms of Use"], ["/legal/cookies", "Cookie Policy"], ["/legal/affiliate-terms", "Affiliate Terms"], ["/legal/cookie-preferences", "Cookie preferences"]];
+const MAILS = ["hello@lumen.studio", "press@lumen.studio", "partners@lumen.studio"];
+
 export function Footer() {
   return (
     <footer>
@@ -88,10 +93,10 @@ export function Footer() {
             <small>By subscribing, you agree to receive our weekly email digest.</small>
           </div>
           <div className="fp-cols">
-            <div><div className="eb">Product</div><Link href="/library">Library</Link><Link href="/#tools">Tools</Link><Link href="/how-it-works">How it works</Link><Link href="/docs">Docs</Link><Link href="/docs">MCP</Link><Link href="/pricing">Pricing</Link></div>
-            <div><div className="eb">Company</div><Link href="/contact">Contact us</Link><Link href="/#faq">FAQ</Link><Link href="/docs">Privacy Policy</Link><Link href="/docs">Terms of Use</Link></div>
+            <div><div className="eb">Product</div>{PRODUCT.map(([h, l]) => <Link key={l} href={h}>{l}</Link>)}</div>
+            <div><div className="eb">Company</div>{COMPANY.map(([h, l]) => <Link key={l} href={h}>{l}</Link>)}</div>
             <div><div className="eb">Social</div>{SOC.map(([i, l]) => <a key={l} href="#" className="fp-ic"><i>{i}</i>{l}<span>↗</span></a>)}</div>
-            <div><div className="eb">Contact</div><Link href="/contact" className="fp-ic"><i>✉</i>hello@lumen.studio</Link><Link href="/contact" className="fp-ic"><i>✉</i>press@lumen.studio</Link></div>
+            <div><div className="eb">Contact</div>{MAILS.map((m) => <a key={m} href={`mailto:${m}`} className="fp-ic"><i>✉</i>{m}</a>)}</div>
           </div>
         </div>
         <div className="fp-cp">© 2026 Lumen. All prompts are yours to ship.</div>
@@ -112,7 +117,6 @@ export function Cursor() {
       if (dot.current) dot.current.style.transform = `translate(${x}px,${y}px)`;
       const t = e.target as Element;
       const c = t.closest?.(".card") as HTMLElement | null;
-      ring.current?.classList.toggle("v", !!c);
       ring.current?.classList.toggle("h", !c && !!t.closest?.("a,button,summary,input,[role=button]"));
       if (c) { const b = c.getBoundingClientRect(); c.style.setProperty("--x", x - b.left + "px"); c.style.setProperty("--y", y - b.top + "px"); }
     };
@@ -120,7 +124,7 @@ export function Cursor() {
     addEventListener("pointermove", mv); id = requestAnimationFrame(f);
     return () => { removeEventListener("pointermove", mv); cancelAnimationFrame(id); };
   }, []);
-  return (<><div id="cd" ref={dot}><i /></div><div id="cr" ref={ring}><i>View</i></div></>);
+  return (<><div id="cd" ref={dot}><i /></div><div id="cr" ref={ring}><i /></div></>);
 }
 
 const STARS = [[18, 30, 0], [42, 70, 1.2], [64, 22, 2.1], [80, 64, 0.6], [30, 80, 1.8], [90, 34, 2.7], [54, 50, 3.3]];

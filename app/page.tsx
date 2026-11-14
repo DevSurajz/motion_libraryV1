@@ -9,8 +9,6 @@ import { ShineButton } from "@/components/chrome";
 import { Spotlight } from "@/components/chrome";
 import { HeroLazy } from "@/components/hero-lazy";
 
-const AIS = ["Claude", "ChatGPT", "Cursor", "Lovable", "v0", "Bolt", "Copilot"];
-
 export default function Home() {
   return (
     <>
@@ -24,10 +22,6 @@ export default function Home() {
           <div className="btns"><ShineButton href="/pricing">Get unlimited access</ShineButton></div>
         </div>
       </Spotlight>
-
-      <div className="mq" aria-label="Works with">
-        <div>{[0, 1, 2, 3].flatMap((r) => AIS.map((a) => <span key={r + a}>{a}</span>))}</div>
-      </div>
 
       {CATEGORIES.map(([title, tag]) => (
         <section key={tag} className="sec" style={{ paddingBottom: 0 }}>

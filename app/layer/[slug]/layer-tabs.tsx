@@ -1,6 +1,6 @@
 "use client";
 import * as Tabs from "@radix-ui/react-tabs";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Ring } from "@/components/visuals";
 import { useUi } from "@/components/providers";
 
@@ -14,7 +14,7 @@ export function LayerTabs({ prompt }: { prompt: string }) {
     <Tabs.Root defaultValue="prompt">
       <Tabs.List className="tabs" aria-label="Prompt details">
         {["Prompt", "Preview", "Performance"].map((t) => (
-          <Tabs.Trigger key={t} value={t.toLowerCase()} className="chip">{t}</Tabs.Trigger>
+          <Tabs.Trigger key={t} value={t.toLowerCase()} className={buttonVariants({ variant: "chip", size: "chip" })}>{t}</Tabs.Trigger>
         ))}
       </Tabs.List>
       <Tabs.Content value="prompt"><div className="pre" style={{ whiteSpace: "pre-wrap" }}>{prompt}</div><Button variant="white" onClick={copy}>Copy prompt</Button></Tabs.Content>

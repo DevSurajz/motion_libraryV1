@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "./visuals";
+import { Button } from "./ui/button";
 
 const SEO = ["sitemap.xml", "robots.txt", "canonical", "meta description", "robots meta", "Open Graph", "Twitter card", "JSON-LD", "web manifest", "favicons + touch icon", "lang attribute", "semantic HTML"];
 const AIS = ["React", "Vue", "Svelte", "Astro", "Nuxt", "HTML", "WordPress", "Shopify", "Lovable", "Manus"];
@@ -60,7 +61,7 @@ export function Features() {
               <div className="fchips">{AIS.map((a) => <span key={a}>{a}</span>)}<span className="dash">+ anything</span></div></div>
           </F>
           <F icon="▦" title="Check the numbers yourself" text={<>Open any template: its <strong>Performance</strong> tab shows how smoothly it scrolls, its <strong>SEO</strong> tab the full PageSpeed reports.</>}>
-            <Link href="/library" className="ctp-o" style={{ alignSelf: "start" }}>Browse templates</Link>
+            <Button asChild variant="metal" className="self-start"><Link href="/library">Browse templates</Link></Button>
           </F>
         </Reveal>
       </div>
