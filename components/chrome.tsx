@@ -43,7 +43,7 @@ export function Nav() {
           </div>
         </div>
         <button className="sb glass msb" onClick={openPalette} aria-label="Search designs">⌕ <span>Search designs</span></button>
-        <Button asChild variant="metal" size="sm"><Link href="/signin">Sign in</Link></Button>
+        <Button asChild variant="metal" size="sm" className="dsi"><Link href="/signin">Sign in</Link></Button>
         <button id="bg" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>{open ? "✕" : "☰"}</button>
       </nav>
       <div id="mm" className={open ? "o" : ""} onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
