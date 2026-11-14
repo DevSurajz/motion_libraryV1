@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
 import { drawArt } from "@/lib/art";
 import type { Item } from "@/lib/data";
@@ -70,25 +70,4 @@ export function Carousel({ children }: { children: ReactNode }) {
     addEventListener("pointermove", mv); addEventListener("pointerup", up);
   };
   return <div ref={ref} className="car" style={{ maxWidth: 1328, margin: "auto" }} onPointerDown={onDown} data-lenis-prevent-wheel="false">{children}</div>;
-}
-
-const TERM = ['$ lumen agent "moody portfolio for a ceramicist"', "› searching library… Komorebi, Halcyon", "› composing hero · gallery · contact", "› Lighthouse 98 / 100 / 100", "✓ site ready — deploying"];
-export function Terminal() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true });
-  const [li, setLi] = useState(0);
-  const [ci, setCi] = useState(0);
-  useEffect(() => {
-    if (!inView || li >= TERM.length) return;
-    if (matchMedia("(prefers-reduced-motion:reduce)").matches) { setLi(TERM.length); return; }
-    const done = ci >= TERM[li].length;
-    const t = setTimeout(() => (done ? (setLi(li + 1), setCi(0)) : setCi(ci + 1)), done ? 450 : 28);
-    return () => clearTimeout(t);
-  }, [inView, li, ci]);
-  return (
-    <div className="term" ref={ref}>
-      {TERM.slice(0, li).map((l, i) => <div key={i}>{i ? l : <b>{l}</b>}</div>)}
-      {li < TERM.length && inView && <div>{li ? TERM[li].slice(0, ci) : <b>{TERM[0].slice(0, ci)}</b>}▍</div>}
-    </div>
-  );
 }

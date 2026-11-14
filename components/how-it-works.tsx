@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArtCanvas, Ring, Terminal } from "./visuals";
+import { ArtCanvas, Ring } from "./visuals";
 
 const STEPS: { icon: string; title: string; text: ReactNode; extra?: ReactNode; vis: ReactNode }[] = [
   {
@@ -19,11 +19,6 @@ const STEPS: { icon: string; title: string; text: ReactNode; extra?: ReactNode; 
     text: <>Paste one prompt into Claude Code or Cursor. It’s <b>live, fast</b> and <b>SEO-ready</b>.</>,
     extra: <><small>PageSpeed, median across our templates</small><div className="hw-chips"><span>Mobile 98</span><span>Desktop 100</span><span>SEO 100</span></div><Link href="/docs" className="hw-rd">Read the docs →</Link></>,
     vis: <div className="rings"><Ring v={98} l="Mobile" /><Ring v={100} l="Desktop" /><Ring v={100} l="SEO" /></div>,
-  },
-  {
-    icon: "✦", title: "Or let your agent do it all",
-    text: <>Connect Lumen over <b>MCP</b>. One sentence in, finished site out.</>,
-    vis: <Terminal />,
   },
 ];
 

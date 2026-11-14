@@ -11,7 +11,6 @@ export default function DocsPage() {
         <h3>1. Pick a prompt</h3><p>Browse the library or press ⌘K to search everything.</p>
         <h3>2. Paste it</h3><p>Use Claude, ChatGPT, Cursor, Lovable, v0 or Bolt. Name your stack in the first line.</p>
         <h3>3. Tune and ship</h3><p>Edit the colour, type and motion variables in the prompt, then publish.</p>
-        <h3>4. Use MCP</h3><p>Connect Lumen to your agent and ask for a site in one sentence.</p>
       </div>
     </section>
   );

@@ -38,7 +38,6 @@ export function Nav() {
             ))}
           </div>
           <div className="ls glass">
-            <Link href="/docs">✦ MCP</Link>
             <Link href="/#tools">Prompts<span className="nw">NEW</span></Link>
           </div>
         </div>
@@ -54,7 +53,6 @@ export function Nav() {
             </Link>
           ))}
           <div className="mcards">
-            <Link href="/docs" className="mcard"><i>✦</i><b>MCP</b><small>The library inside your AI agent</small></Link>
             <Link href="/how-it-works" className="mcard"><i>◇</i><b>How it works</b><small>Idea to interface in one prompt</small></Link>
             <Link href="/library" className="mcard"><span className="nw2 tr">New</span><i>◈</i><b>Prompts</b><small>Copy-ready cinematic layers</small></Link>
           </div>
@@ -72,7 +70,7 @@ export function AskButton() {
 }
 
 const SOC = [["◎", "Instagram"], ["f", "Facebook"], ["P", "Pinterest"], ["𝕏", "Lumen on X"], ["in", "LinkedIn"]];
-const PRODUCT = [["/library", "Templates"], ["/library", "3D Scenes"], ["/library", "Sections"], ["/library", "Backgrounds"], ["/library", "Gradients"], ["/#tools", "Tools"], ["/docs", "Docs"], ["/docs", "MCP"], ["/pricing", "Pricing"]];
+const PRODUCT = [["/library", "Templates"], ["/library", "3D Scenes"], ["/library", "Sections"], ["/library", "Backgrounds"], ["/library", "Gradients"], ["/#tools", "Tools"], ["/docs", "Docs"], ["/pricing", "Pricing"]];
 const COMPANY = [["/legal/about", "About"], ["/legal/affiliate", "Affiliate"], ["/contact", "Contact us"], ["/legal/privacy", "Privacy Policy"], ["/legal/terms", "Terms of Use"], ["/legal/cookies", "Cookie Policy"], ["/legal/affiliate-terms", "Affiliate Terms"], ["/legal/cookie-preferences", "Cookie preferences"]];
 const MAILS = ["hello@lumen.studio", "press@lumen.studio", "partners@lumen.studio"];
 

@@ -4,7 +4,7 @@ import { CtaPanel } from "@/components/cta-panel";
 
 export const metadata: Metadata = {
   title: "How it works",
-  description: "Find a prompt, make it yours, ship it — or let your agent do it all over MCP.",
+  description: "Find a prompt, make it yours, ship it.",
 };
 
 export default function Page() {
