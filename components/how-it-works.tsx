@@ -18,7 +18,7 @@ const STEPS: { icon: string; title: string; text: ReactNode; extra?: ReactNode; 
     icon: "⇪", title: "Ship it",
     text: <>Paste one prompt into Claude Code or Cursor. It’s <b>live, fast</b> and <b>SEO-ready</b>.</>,
     extra: <><small>PageSpeed, median across our templates</small><div className="hw-chips"><span>Mobile 98</span><span>Desktop 100</span><span>SEO 100</span></div><Link href="/docs" className="hw-rd">Read the docs →</Link></>,
-    vis: <div className="rings"><Ring v={98} l="Mobile" /><Ring v={100} l="Desktop" /><Ring v={100} l="SEO" /></div>,
+    vis: <div className="rings"><Ring v={98} l="Mobile" force /><Ring v={100} l="Desktop" force /><Ring v={100} l="SEO" force /></div>,
   },
 ];
 
@@ -30,7 +30,12 @@ export function HowItWorks() {
     refs.current.forEach((r) => r && io.observe(r));
     return () => io.disconnect();
   }, []);
-  const go = (i: number) => refs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
+  const go = (i: number) => {
+    setActive(i);
+    if (typeof window !== "undefined" && window.innerWidth > 860) {
+      refs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
   return (
     <div className="hw">
       <div className="hw-l">

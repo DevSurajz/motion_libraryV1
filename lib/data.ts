@@ -35,7 +35,7 @@ export const FAQ: [string, string][] = [
 
 export const TIERS: [string, string, string, string[]][] = [
   ["Free", "$0", "Try the library", ["12 rotating prompts", "All categories", "Community support"]],
-  ["Pro", "$19", "per month", ["Unlimited prompts", "All AI design tools", "Live tuning", "Client licence"]],
+  ["Pro", "$19", "per month", ["Unlimited prompts", "All AI design tools", "Client licence"]],
   ["Studio", "$49", "per month", ["Everything in Pro", "5 seats", "Priority support"]],
 ];
 

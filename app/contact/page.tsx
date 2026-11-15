@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <section className="wrap pg">
       <p className="eb">Contact</p>
-      <h1 style={{ fontSize: "clamp(48px,8vw,100px)", margin: "12px 0 30px" }}>Say <em>hello</em></h1>
+      <h1 className="pg-h" style={{ marginBottom: 30 }}>Say <em>hello</em></h1>
       <ContactForm />
     </section>
   );
