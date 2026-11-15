@@ -187,7 +187,7 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 /* ---- footer panel ---- */
 footer{border:0;padding:40px 16px 0;overflow:visible}
 .fp{max-width:1408px;margin:auto;border:1px solid rgba(255,255,255,.1);border-bottom:0;border-radius:28px 28px 0 0;background:radial-gradient(120% 80% at 0 0,#1a1a1a,#0b0b0b 60%);overflow:hidden;position:relative}
-.fp-top{display:grid;grid-template-columns:minmax(0,440px) 1fr;gap:56px;padding:52px 44px 44px}
+.fp-top{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:56px;padding:52px 44px 44px}
 .fp-lg{font:600 22px var(--f-inter),sans-serif;letter-spacing:-.03em;color:#bbb}.fp-lg b{color:#fff;font-weight:600}
 .fp-tag{color:var(--t2);font-size:18px;margin-top:14px;max-width:320px;line-height:1.5}
 .fp-hr{height:1px;background:var(--ln);margin:32px 0}
@@ -196,8 +196,8 @@ footer{border:0;padding:40px 16px 0;overflow:visible}
 .fp-f span{color:var(--t2);font-size:17px;line-height:1}.fp-f input{flex:1;min-width:0;background:none;border:0;outline:none;font-size:15px}
 .fp-f button{padding:10px 18px;border-radius:99px;background:linear-gradient(180deg,#3a3a3a,#1c1c1c);border:1px solid rgba(255,255,255,.25);cursor:pointer;font-size:15px;transition:.3s}.fp-f button:hover{border-color:#fff;box-shadow:0 0 20px rgba(255,255,255,.2)}
 .fp-brand small{display:block;color:var(--t2);font-size:13px;margin-top:12px}
-.fp-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 28px}
-.fp-cols .eb{margin-bottom:14px;font-size:11px}.fp-cols a{display:flex;align-items:center;gap:10px;color:#cfcfcf;font-size:15px;padding:5px 0;transition:.25s}.fp-cols a:hover{color:#fff;transform:translateX(3px)}
+.fp-cols{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:32px}
+.fp-cols .eb{margin-bottom:18px;font-size:11px}.fp-cols a{display:flex;align-items:center;gap:10px;color:#cfcfcf;font-size:15px;padding:5px 0;transition:.25s}.fp-cols a:hover{color:#fff;transform:translateX(3px)}
 .fp-ic i{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:10px;background:#1d1d1d;border:1px solid var(--ln);font:500 14px var(--f-inter);color:#eee}.fp-ic span{font-size:13px;color:rgba(255,255,255,.68)}
 .fp-cp{border-top:1px solid var(--ln);text-align:center;color:var(--t2);font-size:14px;padding:24px 16px 18px;position:relative;z-index:2}
 .fp .big{display:flex;justify-content:center;align-items:flex-end;gap:.01em;width:100%;margin:14px 0 0;padding:8px 12px 0;font:800 clamp(56px,17.5vw,270px)/.88 var(--f-black),var(--f-inter),Arial,sans-serif;letter-spacing:-.015em;color:transparent;-webkit-text-stroke:0;background:none;filter:none;margin-bottom:-.06em;pointer-events:auto;overflow:hidden}
@@ -272,8 +272,8 @@ footer{border:0;padding:40px 16px 0;overflow:visible}
   .hw-mv .ring{width:72px}.hw-mv .ring svg{width:72px;height:72px}.hw-mv .ring b{top:21px;font-size:20px}.hw-mv .ring i{font-size:9px}
 }
 .fp .big{font-family:var(--f-black),var(--f-inter),Arial,sans-serif;font-weight:800;letter-spacing:-.015em}
-.fp-top>*,.fp-cols>*{min-width:0}.fp-cols a{overflow-wrap:anywhere}
-@media(max-width:860px){.fp-cols .fp-ic{font-size:14px}.fp .big{font-size:clamp(56px,17.5vw,160px)}}
+.fp-top>*,.fp-cols>*{min-width:0}.fp-cols a{white-space:nowrap}
+@media(max-width:860px){.fp-cols a{white-space:normal;overflow-wrap:anywhere}.fp-cols .fp-ic{font-size:14px}.fp .big{font-size:clamp(56px,17.5vw,160px)}}
 
 /* ---- v5: scroll blur nav ---- */
 .nblur{position:fixed;top:0;left:0;right:0;height:110px;z-index:49;pointer-events:none;opacity:0;transition:opacity .4s;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(6,6,6,.85),rgba(6,6,6,.4) 60%,transparent);-webkit-mask:linear-gradient(180deg,#000 45%,transparent);mask:linear-gradient(180deg,#000 45%,transparent)}
@@ -669,8 +669,8 @@ nav.sc .glass{background:rgba(20,20,20,.55)}
 @media(min-width:861px) and (max-width:1100px){
   .wrap{padding:0 32px}
   .bento{grid-template-columns:repeat(3,1fr);grid-auto-rows:220px}
-  .fp-top{gap:40px;padding:44px 36px}
-  .fp-cols{gap:24px}
+  .fp-top{grid-template-columns:minmax(0,320px) 1fr;gap:32px;padding:44px 28px}
+  .fp-cols{gap:18px}
   .hw{gap:40px}
   .fg{grid-template-columns:1fr 1fr}
   .fq{gap:28px}
