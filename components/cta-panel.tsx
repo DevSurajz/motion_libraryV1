@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { ShineButton } from "./chrome";
 
 const VERT = `attribute vec2 aPos;varying vec2 vUv;void main(){vUv=aPos*.5+.5;gl_Position=vec4(aPos,0.,1.);}`;
 
@@ -203,7 +202,7 @@ export function CtaPanel() {
             <h2>Every layer, <em>in one place</em></h2>
             <p>The fastest growing library empowering AI design workflows.</p>
             <div className="ctp-b">
-              <ShineButton href="/pricing">See plans</ShineButton>
+              <Link href="/pricing" className="ctp-gl">See plans</Link>
               <Link href="/library" className="ctp-gl">Explore Library</Link>
             </div>
           </div>

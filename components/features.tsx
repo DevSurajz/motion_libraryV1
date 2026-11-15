@@ -61,7 +61,9 @@ export function Features() {
               <div className="fchips">{AIS.map((a) => <span key={a}>{a}</span>)}<span className="dash">+ anything</span></div></div>
           </F>
           <F icon="▦" title="Check the numbers yourself" text={<>Open any template: its <strong>Performance</strong> tab shows how smoothly it scrolls, its <strong>SEO</strong> tab the full PageSpeed reports.</>}>
-            <Button asChild variant="metal" className="self-start"><Link href="/library">Browse templates</Link></Button>
+            <div className="fb-cta">
+              <Button asChild variant="metal"><Link href="/library">Browse templates</Link></Button>
+            </div>
           </F>
         </Reveal>
       </div>

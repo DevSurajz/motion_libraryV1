@@ -12,7 +12,18 @@ export function Faq() {
       <Accordion.Root type="single" collapsible defaultValue={FAQ[0][0]} className="fq-box">
         {FAQ.map(([q, a]) => (
           <Accordion.Item key={q} value={q} className="fq-i">
-            <Accordion.Header asChild><h4><Accordion.Trigger className="fq-t">{q}<i aria-hidden="true">⌄</i></Accordion.Trigger></h4></Accordion.Header>
+            <Accordion.Header asChild>
+              <h4>
+                <Accordion.Trigger className="fq-t">
+                  {q}
+                  <i aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </i>
+                </Accordion.Trigger>
+              </h4>
+            </Accordion.Header>
             <Accordion.Content className="fq-c"><p>{a}</p></Accordion.Content>
           </Accordion.Item>
         ))}
