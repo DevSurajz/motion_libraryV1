@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Providers } from "@/components/providers";
-import { AskButton, Cursor, Footer, Intro, Nav } from "@/components/chrome";
+import { AskButton, CookieBanner, Cursor, Footer, Intro, Nav } from "@/components/chrome";
 
 export const metadata: Metadata = {
   title: { default: "Lumen — Cinematic prompts for immersive websites", template: "%s — Lumen" },
@@ -27,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Nav />
           <main>{children}</main>
           <Footer />
+          <CookieBanner />
           <AskButton />
         </Providers>
       </body>
